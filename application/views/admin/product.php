@@ -1,24 +1,31 @@
 <div id="page-wrapper">
     <div class="header">
         <h1 class="page-header">
-            Tables Page <small>Responsive tables</small>
+            Data Product
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data</li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Data Product</a></li>
         </ol>
     </div>
     <!-- /. ROW  -->
     <div id="page-inner">
-        <div class="row">
             <div class="col-md-12">
                 <!--   Kitchen Sink -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Kitchen Sink
+                        <a href="<?php echo base_url('admin/') ?>" class="btn btn-primary">Add Product</a>
                     </div>
                     <div class="panel-body">
+                        <?php echo $this->session->flashdata('pesan') ?>
+
+                        <form class="form-inline float-right">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                            </div>
+                            <button type="submit" class="btn btn-default">Send invitation</button>
+                        </form>
+
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover">
                                 <thead>
@@ -61,5 +68,5 @@
                 </div>
                 <!-- End  Kitchen Sink -->
             </div>
-        </div>
+        
     </div>

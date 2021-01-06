@@ -35,6 +35,16 @@ class stiker_model extends CI_Model {
         $this->db->delete($table);
     }
 
+    public function ambil_id_product($id)
+    {
+        $hasil = $this->db->where('id_product', $id)->get('product');
+        if ($hasil->num_rows() > 0) {
+            return $hasil->result();
+        } else {
+            return false;
+        }
+    }
+
 }
 
 /* End of file stiker_model.php */

@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <label>Desciption</label>
-                    <textarea type="text" name="description" class="form-control"></textarea>
+                    <input type="text" name="description" class="form-control">
                     <?php echo form_error('description', '<div class="text-small text-danger">', '</div>') ?>
                 </div>
 

@@ -1,8 +1,9 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class data_product extends CI_Controller {
+class data_product extends CI_Controller
+{
 
     public function index()
     {
@@ -115,7 +116,8 @@ class data_product extends CI_Controller {
                 'status'             => $status,
                 'photo'              => $photo,
             );
-
+            // var_dump($data);
+            // die();
             $where = array(
                 'id_product' => $id
             );
@@ -131,22 +133,22 @@ class data_product extends CI_Controller {
         }
     }
 
-    public function updateUpload()
-    {
-        $gambar               = $_FILES['gambar']['name'];
-        if ($gambar = '') {
-        } else {
-            $config['upload_path']     = './assets/upload/';
-            $config['allowed_types']   = 'jpg|jpeg|png|tiff';
+    // public function updateUpload()
+    // {
+    //     $gambar               = $_FILES['gambar']['name'];
+    //     if ($gambar = '') {
+    //     } else {
+    //         $config['upload_path']     = './assets/upload/';
+    //         $config['allowed_types']   = 'jpg|jpeg|png|tiff';
 
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('gambar')) {
-                echo "Gambar Mobil Gagal DiUpload";
-            } else {
-                $gambar = $this->upload->data('file_name');
-            }
-        }
-    }
+    //         $this->load->library('upload', $config);
+    //         if (!$this->upload->do_upload('gambar')) {
+    //             echo "Gambar Mobil Gagal DiUpload";
+    //         } else {
+    //             $gambar = $this->upload->data('file_name');
+    //         }
+    //     }
+    // }
 
     public function _rules()
     {

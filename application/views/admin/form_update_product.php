@@ -10,7 +10,7 @@
                     <form action="<?php echo base_url('admin/data_product/update_product_action') ?>" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Name Product</label>
-                            <input type="hidden" name="id_pelanggan" value="<?php echo $pd->id_product ?>">
+                            <input type="hidden" name="id_product" value="<?php echo $pd->id_product ?>">
                             <input type="text" name="name_product" class="form-control" value="<?php echo $pd->name_product ?>">
                             <?php echo form_error('name_product', '<div class="text-small text-danger">', '</div>') ?>
                         </div>
@@ -43,15 +43,10 @@
 
                             <div class="form-group">
                                 <label>Photo</label>
-                                <p>the photo before</p>
-                                <img src="<?php echo base_url('assets/upload/' . $pd->photo) ?>" width="400px">
-                                <hr>
-                                <?php echo form_open_multipart('editUpload'); ?>
                                 <input type="file" name="photo" class="form-control" value="<?php echo $pd->photo ?>">
                             </div>
                             <button type="submit" class="btn btn-primary mt-4">Save</button>
                             <button type="reset" class="btn btn-danger mt-4">Reset</button>
-                            <?php echo form_close(); ?>
                         </div>
                     </form>
                 <?php endforeach; ?>
